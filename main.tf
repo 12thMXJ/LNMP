@@ -18,7 +18,7 @@ resource "ansible_host" "node1" {
   count = 1
 
   // 配置机器的 hostname，一般配置为计算资源的 public_ip (或 private_ip)
-  inventory_hostname  = "172.31.185.160"
+  inventory_hostname  = "8.131.75.98"
 
   // 配置机器所属分组
   groups = ["node1"]
@@ -26,7 +26,7 @@ resource "ansible_host" "node1" {
   // 传给 ansible 的 vars，可在 playbook 文件中引用
   vars = {
     wait_connection_timeout   = 60
-    proxy_private_ip          = "172.31.185.160"
+    proxy_private_ip          = "8.131.75.98"
     proxy_docker_tag          = var.proxy_docker_tag
   }
 }
